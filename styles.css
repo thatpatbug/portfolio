@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: white;
+    /* font-style: normal; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+
+    /* overflow-x: hidden; */
+
+        background-image: url('assets/background.png');
+    
+        background-repeat: repeat;
+    
+        background-size: 576px 576px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+
+    background-image: url('assets/background.png');
+    background-repeat: repeat;
+
+    transform: rotate(-11.25deg);
+
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -576px 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Match this value exactly to your navbar's height (e.g., 80px) */
+    scroll-padding-top: 90px;
+}
+
+.link {
+    /* width: fit-content; */
+    color: #FFB8C7;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ff5377;
+    /* text-decoration: none; */
+}
+
+/* a:active {
+    color: #ff0000;
+} */
+
+#banner {
+    max-width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8px;
+
+    width: 100%;
+
+    filter: drop-shadow(2px 0px 0px white) drop-shadow(-2px 0px 0px white) drop-shadow(0px 2px 0px white) drop-shadow(0px -2px 0px white);
+}
+
+.page-header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.page-footer {
+    padding-top: 20px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.page-footer, .page-footer .link {
+    
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 20px; */
+    padding-left: 20px;
+    padding-right: 20px;;
+}
+
+.card-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background: rgb(0, 0, 0, 0.5);
+    padding: 18px;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    border: 2px solid white;
+    backdrop-filter: blur(4px);
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background: rgb(0, 0, 0, 0.5);
+    padding: 18px 24px 18px 24px;
+    border-radius: 8px;
+    border: 2px solid white;
+    backdrop-filter: blur(4px);
+}
+
+.game-thumbnail {
+    width: 315px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.card-thumbnail {
+    height: 54px;
+}
+
+.game-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: white;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.game-details h2 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.game-details p {
+    margin: 0 0 15px 0;
+    /* color: #555; */
+}
+
+.navbar-wrapper {
+    width: 100%;
+    background: rgb(0, 0, 0, 0.5);
+    border-bottom: 2px solid white;
+    backdrop-filter: blur(4px);
+    /* border-bottom: 2px solid #333; */
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #FFB8C7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .game-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .game-thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card-thumbnail {
+        display: none;
+    }
+}
